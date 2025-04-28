@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>موقع ديني متكامل</title>
+    <style>
+        body {
+            font-family: 'Traditional Arabic', Arial, sans-serif;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1509228627159-6452b7c3deaf?crop=entropy&cs=tinysrgb&fit=crop&h=800&w=1200') no-repeat center center fixed;
+            background-size: cover;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+            color: #f8f9fa;
+        }
+
+        p {
+            font-size: 22px;
+            margin: 20px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #28a745;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #218838;
+        }
+
+        section {
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5); /* خلفية شفافة للنصوص */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #138496;
+        }
+
+        #الذكر {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>مرحبًا بك في الموقع الإسلامي</h1>
+
+    <nav>
+        <a href="#الرئيسية">الرئيسية</a>
+        <a href="#اذكار">أذكار الصباح والمساء</a>
+        <a href="#احاديث">أحاديث نبوية</a>
+    </nav>
+
+    <!-- قسم الرئيسية -->
+    <section id="الرئيسية">
+        <h2>قال الله تعالى:</h2>
+        <p><strong>﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾ (الرعد: 28)</strong></p>
+
+        <button onclick="عرض_ذكر()">عرض ذكر عشوائي</button>
+        <p id="الذكر"></p>
+    </section>
+
+    <!-- قسم الأذكار -->
+    <section id="اذكار">
+        <h2>أذكار الصباح والمساء</h2>
+
+        <p>أصبحنا وأصبح الملك لله والحمد لله، لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير.</p>
+        <p>اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور.</p>
+        <p>رضيت بالله ربًا، وبالإسلام دينًا، وبمحمد صلى الله عليه وسلم نبيًا.</p>
+    </section>
+
+    <!-- قسم الأحاديث -->
+    <section id="احاديث">
+        <h2>أحاديث نبوية</h2>
+
+        <p>قال رسول الله ﷺ: "من صلى عليّ واحدة، صلى الله عليه بها عشرًا".</p>
+        <p>قال رسول الله ﷺ: "خيركم من تعلم القرآن وعلمه".</p>
+        <p>قال رسول الله ﷺ: "الدال على الخير كفاعله".</p>
+    </section>
+
+    <audio id="صوت" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+
+    <script>
+        function عرض_ذكر() {
+            const الأذكار = [
+                "سبحان الله وبحمده، سبحان الله العظيم",
+                "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير",
+                "اللهم صل وسلم على نبينا محمد",
+                "أستغفر الله العظيم وأتوب إليه",
+                "لا حول ولا قوة إلا بالله"
+            ];
+            let ذكر = الأذكار[Math.floor(Math.random() * الأذكار.length)];
+            document.getElementById("الذكر").innerText = ذكر;
+            document.getElementById("صوت").play();
+        }
+    </script>
+
+</body>
+</html>
